@@ -9,7 +9,8 @@ import {Zi} from "./zi";
 import { Ding } from "./ding";
 import  Dizhi  from "./dizhi";
 import Detail from "./detail";
-
+import  Scan  from "./scan";
+import  Photo  from "./photo";
 
 export class Lay extends Component{
     getChildContext(){
@@ -36,6 +37,8 @@ export class Lay extends Component{
                 <Route path="/ding" component={Ding}></Route>
                 <Route path="/dizhi" component={Dizhi}></Route>
                 <Route path="/main" component={Main}></Route>
+                <Route path="/scan" component={Scan}></Route>
+                <Route path="/photo" component={Photo}></Route>
                 <Route render={()=>(<Redirect to="/main/home"/>)}></Route>
                 
             </Switch>

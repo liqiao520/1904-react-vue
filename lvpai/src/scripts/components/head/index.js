@@ -106,27 +106,28 @@ class Pop extends Component {
             history.push("/scan");
         }
         if (opt.props.value == 'photo') {
-            this.showActionSheet();
+            // this.showActionSheet();
+            history.push("/photo");
         }
     };
 
-    showActionSheet = () => {
-        const BUTTONS = ['拍照', '从相机中选择', '直接拍照', '删除', '取消'];
-        ActionSheet.showActionSheetWithOptions({
-            options: BUTTONS,
-            cancelButtonIndex: BUTTONS.length - 1,
-            destructiveButtonIndex: BUTTONS.length - 2,
-            // title: 'title',
-            message: 'wh1909 - 手机拍照',
-            maskClosable: true,
-            'data-seed': 'logId',
-            wrapProps
-        },
-            (buttonIndex) => {
-                console.log(buttonIndex);
-                Toast.success('' + BUTTONS[buttonIndex] + 'success !!!', 1);
-            });
-    }
+    // showActionSheet = () => {
+    //     const BUTTONS = ['拍照', '从相机中选择', '直接拍照', '删除', '取消'];
+    //     ActionSheet.showActionSheetWithOptions({
+    //         options: BUTTONS,
+    //         cancelButtonIndex: BUTTONS.length - 1,
+    //         destructiveButtonIndex: BUTTONS.length - 2,
+    //         // title: 'title',
+    //         message: 'wh1909 - 手机拍照',
+    //         maskClosable: true,
+    //         'data-seed': 'logId',
+    //         wrapProps
+    //     },
+    //         (buttonIndex) => {
+    //             console.log(buttonIndex);
+    //             Toast.success('' + BUTTONS[buttonIndex] + 'success !!!', 1);
+    //         });
+    // }
 
 
     render() {

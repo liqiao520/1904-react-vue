@@ -2,8 +2,8 @@
 import axios from "axios";
 import {Toast} from "antd-mobile"
 import {history} from "~";
-export const baseURL = "http://localhost:1909/"; 
-// export const baseURL = "http://39.105.151.203:1909/";   // 基路径
+// export const baseURL = "http://localhost:1909/"; 
+export const baseURL = "https://deeplove.top:1909/";   // 基路径
 
 var token = "";
 axios.defaults.baseURL = baseURL;   // 基路径

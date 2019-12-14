@@ -25,17 +25,18 @@ export default class Guide extends Component{
             txt: "跳过 5s"
         }
     }
-    toHome(e) {
-        if (e && e.stopPropagation) {
-            e.stopPropagation();
-        }
-        else {
-            window.event.cancelBubble = true;
-        }
+    // toHome(e) {
+    //     clearInterval(timer);
+    //     if (e && e.stopPropagation) {
+    //         e.stopPropagation();
+    //     }
+    //     else {
+    //         window.event.cancelBubble = true;
+    //     }
      
-        history.push("/main")
-        clearInterval(timer);
-    };
+    //     history.push("/main")
+        
+    // };
 
     startCount() {
         timer = setInterval(() => {
@@ -60,9 +61,9 @@ export default class Guide extends Component{
                 this.setState({
                     count: 5,
                 })
-                
-                history.push("/main")
                 clearInterval(timer);
+                history.push("/main")
+                
             
             }
             
@@ -76,7 +77,7 @@ export default class Guide extends Component{
             <div className="guide">
                 <Carousel
                     autoplay={false}
-                    infinite
+                    
                     dots = {false}
                     beforeChange={(from, to) => console.log(`slide from ${from} to ${to}`)}
                     afterChange={index => index == 3?this.startCount():""}
@@ -84,7 +85,7 @@ export default class Guide extends Component{
                     {
                         this.state.imgs.map((item,index)=>{
                             return (
-                                <a
+                                <div
                                 key={index}
                                 style={{ display: 'inline-block', width: '100%', height: "100vh" }}
                                 >   
@@ -98,7 +99,7 @@ export default class Guide extends Component{
                                     />
                                       {index==this.state.imgs.length-1&&<button className="g-btn" onClick={this.toHome}> {this.state.txt} </button>}
                                     {/* {index==this.state.imgs.length-1&&<button className="g-btn" onClick={this.gotoMain}> 点击进入主页 </button>} */}
-                                </a>
+                                </div>
                             )
                         })
                     }
