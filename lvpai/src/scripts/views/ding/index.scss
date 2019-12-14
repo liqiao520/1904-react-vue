@@ -1,0 +1,18 @@
+.ding{
+    overflow: hidden;
+    .am-list-item img{
+        width: 2rem;
+        height: 1.5rem;
+    }
+    .am-list-thumb img{
+        width: 1rem;
+        height: 1rem;
+    }
+}
+
+.am-list-body .am-list-item:last-child {
+    
+    padding: 2% 2%;
+    box-sizing: border-box;
+}
+

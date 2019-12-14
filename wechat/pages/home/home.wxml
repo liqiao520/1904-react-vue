@@ -1,0 +1,72 @@
+<!--pages/home/home.wxml-->
+<view>
+  <text>pages/home/home.wxml</text>
+  <text>---{{names}}</text>
+
+  <view>
+    <text>{{txt}}</text>
+  </view>
+
+  <view>
+    <text bindtap="changCount">{{msg}}--{{count}}</text>
+  </view>
+
+  <view>
+    {{flag?'要么活':'要么死'}}
+  </view>
+  <view wx:if="{{flag}}">
+    <image src="{{imgSrc}}" class="pic" />
+
+  </view>
+  <view hidden="{{flag}}"> hidden 等比 v-show 样式 display:none</view>
+  <view>
+    <switch checked="{{flag}}" bindchange="changeflag"></switch>
+  </view>
+
+  <view wx:for="{{array}}" wx:key="index">
+    {{index}}: {{item.message}}
+  </view>
+
+  <view wx:if="{{!flag}}">
+    <view wx:for="{{num}}" wx:for-item="i" wx:key="i">
+      <view wx:for="{{num}}" wx:for-item="j" wx:key="j">
+        <view wx:if="{{i>=j}}">{{i}}*{{j}} = {{i*j}}</view>
+      </view>
+    </view>
+  </view>
+
+  <view>wx:key  来指定列表中项目的唯一的标识符</view>
+  <view id="testDom" data-hi="{{inp}}" bindtap="handleTap">
+  Click Me !=={{clientX}}
+  </view>
+
+  <view>{{inp}}</view>
+  <view>
+    <input type="text" value="{{inp}}" bindinput="changeInp"/>
+  </view>
+
+<view bindtap="parent">
+        <view >事件分类 </view>
+        <view bindtap="childone"> 冒泡事件：当一个组件上的事件被触发后，该事件会向父节点传递。 false </view>
+        <view bindtouchstart="todoSome" style="color:red"> 非冒泡事件：当一个组件上的事件被触发后，该事件不会向父节点传递。 true </view>
+        <view catchtap="childtwo" style="color:green"> 小程序规定  bind 绑定的事件不会阻止事件冒泡  && catch 绑定的事件一定阻止事件冒泡 </view>
+    </view>
+    <view class="box">
+    200rpx
+    </view>
+
+    <import src="/tpls/like.wxml" />
+     <import src="/tpls/actionsheet.wxml" />
+     <import src="/tpls/login.wxml" />
+
+    <template is="like" data="{{...likeData}}" />
+    <template is="actionsheet" data="{{...actionData}}" />
+     <template is="login" data="{{...loginData}}" />
+
+  <button type="primary" bindtap="openModal" >打开 modal </button>
+
+   <button type="warn" bindtap="openactionsheet" >打开 sheet </button>
+
+    <button type="warn" bindtap="open" >打开 自定义sheet </button>
+
+</view>

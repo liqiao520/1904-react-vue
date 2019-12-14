@@ -1,0 +1,8 @@
+<!--pages/mine/mine.wxml-->
+<view wx:if="{{toggle}}">
+    <progress percent="{{percent}}" stroke-width="12"  show-info  color="green" />
+</view>
+<view wx:else>
+    <view>mine -- 个人中心</view>
+    <view>swiper </view>
+</view>

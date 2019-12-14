@@ -1,0 +1,7 @@
+<template name="like">
+  <view>
+    <view>who=={{who}}</view>
+    <view>count=={{count}}</view>
+    <view>time=={{time}}</view>
+  </view>
+</template>

@@ -1,0 +1,27 @@
+<template name="login">
+  <modal 
+  title="登录"
+  wx:if="{{flag}}"
+  cancelText="取消登录"
+  confirmText="马上登录"
+  bindcancel="todocancel"
+  bindconfirm="todoconfirm"
+  >
+  <label class="h-label">
+    <input type="tel" value="{{mobile}}"
+    placeholder="请输入手机号"
+    bindinput="getMobile"
+    />
+  </label>
+
+  <label class="h-label">
+    <input type="number" value="{{code}}"
+    placeholder="请输入验证码"
+    bindinput="getCode"
+    />
+  </label>
+  <button type="warn" bindtap="sendCode" size="mini">发送验证码</button>
+
+  </modal>
+
+</template>

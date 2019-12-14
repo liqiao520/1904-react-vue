@@ -1,0 +1,51 @@
+// 全局的共有的样式
+// @import  scss 导入 css模块  
+// @import 和  link 导入的区别 ???
+
+@import "animate.css";
+@import "common";
+
+$base_color:#0f0;
+$base_bgColor:#ccc;
+$base_fontSize:28px;
+
+
+
+
+html,body,#app,.main{
+    width:100%;
+    height:100%;
+}
+
+// #app{
+//     font-size: $base_fontSize;
+//     h2{
+//         color:$base_color;
+//     }
+// }
+
+.section{
+    width:80%;
+    padding:20px 10px;
+    border:2px solid darkblue;
+    border-radius: 8px;
+    margin-top:20px;
+}
+
+
+.content{
+    width:100%;
+    display:flex;
+    .right{
+        flex:1;
+        background:#e4e4e4;
+        padding:40px;
+        box-sizing: border-box;        
+    }
+}
+
+
+.title{
+    color:#E6A23C;
+    font-size:36px;
+}
